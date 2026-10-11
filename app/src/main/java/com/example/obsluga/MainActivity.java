@@ -1,6 +1,7 @@
 package com.example.obsluga;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -28,17 +29,12 @@ public class MainActivity extends AppCompatActivity {
         textView6 = findViewById(R.id.textView6);
         textView6.setText("0");
 
-        // --- ETAP 1: Osobna lambda dla każdego przycisku cyfry (np. 1, 2, 3) ---
-        findViewById(R.id.button16).setOnClickListener(v -> {
-            textView6.setText(textView6.getText().toString() + "1");
-        });
+        findViewById(R.id.button16).setOnClickListener(v -> appendSymbol("1"));
+        findViewById(R.id.button18).setOnClickListener(v -> appendSymbol("2"));
+        findViewById(R.id.button17).setOnClickListener(v -> appendSymbol("3"));
+    }
 
-        findViewById(R.id.button18).setOnClickListener(v -> {
-            textView6.setText(textView6.getText().toString() + "2");
-        });
-
-        findViewById(R.id.button17).setOnClickListener(v -> {
-            textView6.setText(textView6.getText().toString() + "3");
-        });
+    private void appendSymbol(String symbol) {
+        textView6.setText(textView6.getText().toString() + symbol);
     }
 }
